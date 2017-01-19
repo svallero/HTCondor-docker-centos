@@ -15,8 +15,8 @@ ADD     https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /
 COPY    htcondor-stable-rhel7.repo /etc/yum.repos.d/htcondor-stable-rhel7.repo
 COPY    RPM-GPG-KEY-HTCondor /etc/pki/rpm-gpg/RPM-GPG-KEY-HTCondor
 
-RUN	set -ex \
-        && rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-HTCondor \ 
+RUN	#set -ex \
+        rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-HTCondor \ 
         #&& yum makecache fast \
 	# CONDOR
 	&& yum -y install wget procps curl epel-release openssh-clients\
